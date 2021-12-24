@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="update">UPDATE</button>
+        
+        <script>
+            const url = 'https://o38sm22nlk.execute-api.us-east-1.amazonaws.com/default/challenge-dirmod'
+            //const url = 'https://v6.exchangerate-api.com/v6/b859d902a3da157e19232c20/latest/USD'
+        document.querySelector('#update').addEventListener('click', () => {
+        fetch(url)
+        .then(res => res.json())
+        .then(datos => {
+            tabla(datos)
+            });
+        })
+        function tabla(datos){
+            console.log(datos)
+        }
+       </script>
+        
+    </body>
+</html>
